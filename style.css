@@ -1,0 +1,148 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  overflow-x: hidden;
+}
+nav {
+  display: flex;
+  background-color: rgb(36, 36, 36);
+  opacity: 50px;
+  justify-content: space-around;
+  /* padding: 20px 0; */
+  color: rgb(255, 255, 255);
+  font-size: 16px;
+  height: 50px;
+  align-items: center;
+}
+
+nav .logo {
+  font-family: "Pacifico", cursive;
+  letter-spacing: 3px;
+  font-family: 10px;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  width: 40%;
+  /* background-color: black;
+    agar renggang */
+  justify-content: space-between;
+  font-size: 15px;
+}
+
+nav ul li a {
+  color: rgb(209, 196, 196);
+  text-decoration: none;
+  font-size: 0.8em;
+  /* 1em itu font standarnya */
+}
+
+nav ul li a:hover {
+  color: rgb(250, 234, 234);
+}
+
+/* Hamburger menu */
+.menu-toggle {
+  position: relative;
+  display: none;
+  flex-direction: column;
+  height: 20px;
+  justify-content: space-between;
+  /* background-color: black; */
+}
+
+.menu-toggle input {
+  position: absolute;
+  width: 40px;
+  height: 28px;
+  left: -5px;
+  top: -3px;
+  opacity: 0;
+  cursor: pointer;
+  z-index: 33px;
+}
+.menu-toggle span {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background-color: rgb(209, 196, 196);
+  border-radius: 3px;
+  transition: all 0.5s;
+}
+
+/* hamburger Menu Animation */
+.menu-toggle span:nth-child(2) {
+  /* background-color: ; */
+  transform-origin: 0 0;
+}
+
+.menu-toggle span:nth-child(4) {
+  /* background-color: ; */
+  transform-origin: 0 100%;
+  /* transform origin hanya untuk muterin */
+}
+
+.menu-toggle input:checked ~ span:nth-child(2) {
+  transform: rotate(45deg) translate(-1px, -1px);
+  background-color: white;
+}
+.menu-toggle input:checked ~ span:nth-child(4) {
+  transform: rotate(-45deg) translate(-1px, 0);
+  background-color: white;
+}
+
+.menu-toggle input:checked ~ span:nth-child(3) {
+  opacity: 0;
+  transform: scale(0);
+}
+
+/* responsive breakpoint*/
+
+/* ukuran tablet */
+@media screen and (max-width: 768px) {
+  nav ul {
+    width: 50%;
+  }
+}
+
+/* ukuran mobile */
+@media screen and (max-width: 576px) {
+  .menu-toggle {
+    display: flex;
+  }
+  nav ul {
+    position: absolute;
+    right: 0;
+    top: 0;
+    height: 100vh;
+    justify-content: space-evenly;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(56, 55, 55);
+    width: 80%;
+    z-index: -1;
+    transform: translateX(100%);
+    transition: all 1s;
+    opacity: 0;
+    /* display: none; */
+  }
+
+  nav ul.slide {
+    opacity: 90%;
+    transform: translateX(0);
+  }
+}
+
+/* page */
+
+body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(3.jpg);
+  height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
